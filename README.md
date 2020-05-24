@@ -1,4 +1,5 @@
 # Competitive Programming in Java
+* The Coding Environment
 * Good Coding Practice
 * Test Case Generation
 * Fast I/O for Java
