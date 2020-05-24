@@ -1,11 +1,11 @@
-package CodeChef.DSALearningSeries;
+
+
+// Reference - https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/
 
 public class ReverseNumber {
     public static void reversedNum(String s, int l){
-        String ans="";
-        for(int i=l-1; i>=0; i--){
-            ans += s.charAt(i);
-        }
-        System.out.println(ans);
+        StringBuilder sb = new StringBuilder(s);
+        sb = sb.reverse();
+        System.out.println(sb);
     }
 }
