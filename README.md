@@ -1,10 +1,10 @@
 # Competitive Programming in Java
-* The Coding Environment [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
-* Good Coding Practice   [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
-* Test Case Generation   [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)   
-* Fast I/O for Java      [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
-* GitHub Integration     [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
-* Testing Through Multiple Solvers  [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
-* Java 8 Features [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
-* MultiThreading
+* The Coding Environment [Bam](https://www.youtube.com/watch?v=fWRzpBDxXtk&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb&index=1)
+* Good Coding Practice   [Bam](https://www.youtube.com/watch?v=q4TO2ZfRnfk&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb&index=2)
+* Test Case Generation   [Bam](https://www.youtube.com/watch?v=-AcDqd_iT3k&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb&index=3)   
+* Fast I/O for Java      [Bam](https://www.youtube.com/watch?v=-AcDqd_iT3k&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb&index=4)
+* GitHub Integration     [Bam](https://www.youtube.com/watch?v=-AcDqd_iT3k&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb&index=5)
+* Testing Through Multiple Solvers  [Bam](https://www.youtube.com/watch?v=-AcDqd_iT3k&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb&index=6)
+* Java 8 Features [Bam](https://www.youtube.com/watch?v=-AcDqd_iT3k&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb&index=7)
+* MultiThreading    [Bam](https://www.youtube.com/watch?v=-AcDqd_iT3k&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb&index=8)
 * [Edge](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
