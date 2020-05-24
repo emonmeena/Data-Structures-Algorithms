@@ -1,10 +1,10 @@
 # Competitive Programming in Java
-* The Coding Environment
-* Good Coding Practice
-* Test Case Generation
-* Fast I/O for Java
-* GitHub Integration
-* Testing Through Multiple Solvers
-* Java 8 Features [here](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
+* The Coding Environment [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
+* Good Coding Practice   [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
+* Test Case Generation   [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)   
+* Fast I/O for Java      [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
+* GitHub Integration     [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
+* Testing Through Multiple Solvers  [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
+* Java 8 Features [Bam](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
 * MultiThreading
-* [YouTube](https://www.youtube.com/watch?v=fWRzpBDxXtk&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb)
+* [Edge](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
