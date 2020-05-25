@@ -3,3 +3,5 @@ n = 10^7 O(n)
 n = 10^6 O(n*log(n))
 n = 10^4 O(n^n)
 From the help of above lines we decide which algo should be opted. 
+
+Proper use of access modifiers
