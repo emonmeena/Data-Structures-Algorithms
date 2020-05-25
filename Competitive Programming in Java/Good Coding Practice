@@ -1,0 +1,5 @@
+n = 10^8 test cases = time 1sec
+n = 10^7 O(n)
+n = 10^6 O(n*log(n))
+n = 10^4 O(n^n)
+From the help of above lines we decide which algo should be opted. 
