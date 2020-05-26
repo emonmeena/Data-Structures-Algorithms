@@ -1,7 +1,7 @@
 # Competitive Programming in Java | DSA in Java | ACM ICPC 2020
 ## DSA in Java
 * [CS Dojo](https://www.youtube.com/playlist?list=PLBZBJbE_rGRV8D7XZ08LK6z-4zPoWzu5H)
-* [Apni Kaksha](https://www.youtube.com/watch?v=lxja8wBwN0k&list=PLKKfKV1b9e8ps6dD3QA5KFfHdiWj9cB1s)
+* [Apni Kaksha](https://www.youtube.com/playlist?list=PLKKfKV1b9e8ps6dD3QA5KFfHdiWj9cB1s)
 ## Competitive Programming in Java
 * The Coding Environment
 * Good Coding Practice
