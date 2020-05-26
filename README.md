@@ -15,6 +15,6 @@
 * [GFG](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
 ## ACM ICPC 2020
 Here is the Link for the complete Guidelines.
-[GFG roadmap to ACM ICPC](https://www.geeksforgeeks.org/how-to-prepare-for-acm-icpc/)
-[Codechef 2020 complete process](https://www.codechef.com/icpc/2020)
-[ACM ICPC 2020 Timeline](https://icpc.baylor.edu/worldfinals/schedule)
+* [GFG roadmap to ACM ICPC](https://www.geeksforgeeks.org/how-to-prepare-for-acm-icpc/)
+* [Codechef 2020 complete process](https://www.codechef.com/icpc/2020)
+* [ACM ICPC 2020 Timeline](https://icpc.baylor.edu/worldfinals/schedule)
