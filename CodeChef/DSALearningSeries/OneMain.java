@@ -1,3 +1,4 @@
+package CodeChef.DSALearningSeries;
 
 import java.util.*;
 public class OneMain {
