@@ -13,6 +13,7 @@
 * Multithreading
 * [YouTube](https://www.youtube.com/watch?v=fWRzpBDxXtk&list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb)
 * [GFG](https://www.geeksforgeeks.org/java-tricks-competitive-programming-java-8/)
+* [Java Speed up](https://blog.jooq.org/2015/02/05/top-10-easy-performance-optimisations-in-java/)
 ## ACM ICPC 2020
 Here is the Link for the complete Guidelines.
 * [GFG roadmap to ACM ICPC](https://www.geeksforgeeks.org/how-to-prepare-for-acm-icpc/)
