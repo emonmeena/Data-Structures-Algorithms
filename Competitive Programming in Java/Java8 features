@@ -1,0 +1,17 @@
+Arrays Features in Java8 -> (https://www.softwaretestinghelp.com/arrays-in-java-8/)
+                            (https://www.journaldev.com/2389/java-8-features-with-examples)
+Convert large array into Stream 
+Arrays.stream(arr).sum
+Arrays.stream.parallelSort()
+Arrays.average and many more...
+Arrays.stream().parallel().max()
+Integer.MIN_VALUE
+
+Streams in Java is a new feature included since Java 8.
+ Streams provide a string API whose methods can be used on collections in Java. In this tutorial, 
+ we have seen stream methods that work on Java arrays. 
+ We have also seen the other features that were added to Java arrays in Java 8 edition.
+
+One of them is stream while the other is the parallelSort method that sorts an array in a parallel manner. 
+This method is faster than the linear method sort, 
+which was evident in the program where we compared both the methods.

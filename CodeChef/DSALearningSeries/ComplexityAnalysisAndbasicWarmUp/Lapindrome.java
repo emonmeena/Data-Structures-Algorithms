@@ -1,4 +1,4 @@
-package CodeChef.DSALearningSeries;
+package CodeChef.DSALearningSeries.ComplexityAnalysisAndbasicWarmUp;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package CodeChef.DSALearningSeries;
+package CodeChef.DSALearningSeries.ComplexityAnalysisAndbasicWarmUp;
 
 // Reference - https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/
 
