@@ -6,6 +6,9 @@ Arrays.stream.parallelSort()
 Arrays.average and many more...
 Arrays.stream().parallel().max()
 Integer.MIN_VALUE
+BigInteger class is immutable
+- mod / modInverse
+- multiply, divide, add, subtract
 
 Streams in Java is a new feature included since Java 8.
  Streams provide a string API whose methods can be used on collections in Java. In this tutorial, 
