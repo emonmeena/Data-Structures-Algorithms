@@ -1,4 +1,4 @@
 fast Output
 - use StringBuilder in place of String.
 fast Input
-BufferedReader
+- BufferedReader
