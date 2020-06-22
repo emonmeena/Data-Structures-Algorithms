@@ -14,12 +14,18 @@ public class Main {
         }
         // Printing all elements
         LinkedList.printAll(head);
+
+        int key = 106;
         // Search Method returns true or false
         System.out.println( 
-        LinkedList.search(head, 50)
+        LinkedList.search(head, key)
         );
         // Insertion at the beginning
-        head = LinkedList.insertAtStart(head, 106); //returns new head at new Node.
+        head = LinkedList.insertAtStart(head, key); //returns new head at new Node. coz head node changes
+
+        //inserting at Specific pos.
+        int pos = 3; // 1 < pos < last position
+        LinkedList.insert(head, pos, key);
 
     }
 }

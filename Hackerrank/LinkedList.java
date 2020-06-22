@@ -59,6 +59,19 @@ public static Node insertAtStart(Node head, int key) {
   head = node;
   return head;
 }
+
+public static void insert(Node head, int pos, int key) {
+ Node node = new Node(key);
+
+  int currPos = 1;
+  while(true){
+    if(currPos == pos - 1) break;
+    head = head.next;
+    currPos++;
+  }
+  node.next = head.next;
+  head.next = node;
+}
   
 
 }
