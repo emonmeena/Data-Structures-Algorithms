@@ -9,10 +9,10 @@ public class Main {
         // LinkedList
         Node head = new Node(0);
 
-        LinkedList.insertNode(head, 100);
+        for(int i = 0; i<11; i++){
+        LinkedList.insertNodeAtLast(head, i*10);
+        }
 
-        System.out.println(head.next.next);
-
-
+        LinkedList.printAll(head);
     }
 }
