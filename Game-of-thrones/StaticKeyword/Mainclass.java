@@ -1,11 +1,13 @@
 package StaticKeyword;
- /*
-        Static Keyword is nothing but used for memory management amd it is related with Class 
-        rather then Objects (Instance of class)
-        Static matlab value change nhi hogi
-        */
+/*
+       Static Keyword is nothing but used for memory management amd it is related with Class 
+       rather then Objects (Instance of class)
+       Static matlab value change nhi hogi
+       */
 
 import StaticKeyword.Multiclass.A;
+
+// import StaticKeyword.Multiclass.A;
 // import StaticKeyword.Multiclass.B;
 
 public class Mainclass {
@@ -26,16 +28,18 @@ public class Mainclass {
     objPerson.printName("Mayank");
   
     Person p2 =  new Person();
-p2.name = "alice";
-System.out.println(p2.name);
-Multiclass objM = new Multiclass();
-
-A obA = new A();
-A.main();
-obA.main(19);
+    p2.name = "alice";
+    System.out.println(p2.name);
+    Multiclass objM = new Multiclass();
+    
+    A obA = new A();
+    A.main();
+    obA.main(19);
 // System.out.println(A.age);
-Multiclass.B objB =  objM.new B(); // we have token help of Multiclass so that we doesn;t require importing B
+    Multiclass.B objB =  objM.new B(); // we have token help of Multiclass so that we doesn;t require importing B
     objB.main();   
+
+    pink.piku();
     }
 
 

@@ -1,7 +1,7 @@
 package StaticKeyword;
 
 public  class Multiclass {
-     public static class A{
+    public static class A{
        int age=55;
         public static void main(){
             System.out.println("this is class A ");
@@ -11,9 +11,10 @@ public  class Multiclass {
             return i;
         }
     }
-public  class B{
-    public  void main(){
-        System.out.println("this is class B");
+
+    public  class B{
+        public  void main(){
+             System.out.println("this is class B");
+        }
     }
-}
 }
