@@ -40,6 +40,25 @@ public static void printAll(Node head) {
     head = head.next;
   }
 }
+
+public static boolean search(Node head, int ele) {
+  // Traversing
+  boolean isPresent = false;
+  while(true){ 
+    if(head == null) break;
+    if(head.key == ele) isPresent = true;
+    head = head.next;
+  }
+
+  return isPresent;
+}
+
+public static Node insertAtStart(Node head, int key) {
+  Node node = new Node(key);
+  node.next = head;
+  head = node;
+  return head;
+}
   
 
 }

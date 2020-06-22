@@ -14,5 +14,12 @@ public class Main {
         }
         // Printing all elements
         LinkedList.printAll(head);
+        // Search Method returns true or false
+        System.out.println( 
+        LinkedList.search(head, 50)
+        );
+        // Insertion at the beginning
+        head = LinkedList.insertAtStart(head, 106); //returns new head at new Node.
+
     }
 }
