@@ -1,0 +1,6 @@
+Writing C++ code efficiently - https://www.geeksforgeeks.org/writing-cc-code-efficiently-in-competitive-programming/
+C++ tricks for Cp - https://www.geeksforgeeks.org/c-tricks-competitive-programming-c-11/
+Vectors - https://www.geeksforgeeks.org/vector-in-cpp-stl/
+GCD - https://www.geeksforgeeks.org/euclidean-algorithms-basic-and-extended/
+Cin vs Scanf - https://www.geeksforgeeks.org/cincout-vs-scanfprintf/#:~:text=Why%20is%20scanf%20faster%20than,redirection%20operation%20overloaded%20using%20templates.
+FAST IO IN CPP - https://www.geeksforgeeks.org/fast-io-for-competitive-programming/#:~:text=ios_base%3A%3Async_with_stdio(false)%3B,first%20input%20or%20output%20operation.&text=It%20is%20a%20static%20member%20of%20function%20of%20std%3A%3Aios_base.
