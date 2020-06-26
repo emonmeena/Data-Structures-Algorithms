@@ -9,11 +9,13 @@ using namespace std;
 #define e "\n" 
 #define traverseVector(i) for (auto i = v.begin(); i != v.end(); ++i) 
 #define rtraverseVector(i) for (auto ir = g1.rbegin(); ir != g1.rend(); ++ir)
-#define in(n) cin>>t
+#define in(n) cin>>n
 #define out(n) cout<<n<<e
 
 void solve(){
-out("mk");
+int n, p; 
+in(n);
+in(p);
 }
 
 int main(int argc, char const *argv[])
@@ -21,7 +23,7 @@ int main(int argc, char const *argv[])
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
  
-   int t = 1;
+   int t;
    in(t);
    while(t--){
        solve();
