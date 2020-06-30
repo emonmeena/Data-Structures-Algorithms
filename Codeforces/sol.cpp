@@ -14,19 +14,13 @@ using namespace std;
 // .fillArray
 
 void solve(){
-int n, a=0, ele;
+int n;
 in(n);
-    Fo(i, 0, n){
-        Fo(j, 1, n+1){
-            if(i%2 != 0 && j<n && n%2==0){
-            a=1;
-            }
-            ele = j+n*i+a;
-            if(i%2 != 0 && j==n && n%2==0) ele = n*i+1; a=0;
-            cout<<ele<<" ";
-        }
-        out("");
+int arr[2*n];
+fo(i, 2*n){
+    in(arr[i]);
 }
+
 }
 
 int main(int argc, char const *argv[])

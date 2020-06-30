@@ -121,6 +121,6 @@ cin.tie(NULL);
 
     //vectorDemo();
     // setDemo();
-    // mapDemo();
-    powerOfSTL();
+    mapDemo();
+    // powerOfSTL();
 }
