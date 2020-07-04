@@ -15,7 +15,65 @@ using namespace std;
 // .fillArray
 
 void solve(){
+int n;
+in(n);
 
+ll int a[n];
+ll int b[n];
+ll int k, cost = 0, temp;
+int j;
+
+fo(i, n){
+    in(a[i]);
+}
+fo(i, n){
+    in(b[i]);
+}
+
+k = sizeof(a)/sizeof(a[0]);
+sort(a, a+k);
+
+k=sizeof(b)/sizeof(b[0]);
+sort(b, b+k);
+
+fo(i, n){
+    if(i==n-1 && a[i] != b[i]){
+        cost = -1;
+        break;
+    }
+    if(a[i] < b[i]){
+        j=i;
+        while(a[j] == a[i] && j < n){
+            j++;
+        }
+        j--;
+        if(i==j){
+            cost = -1;
+            break;
+        }
+        cost += a[j];
+        temp = a[j];
+        a[j] = b[i];
+        b[i] = temp;
+    }
+    else if(b[i] < a[i]){
+        j=i;
+        while(b[j] == b[i] && j < n){
+            j++;
+        }
+        j--;
+        if(i==j){
+            cost = -1;
+            break;
+        }
+        cost += b[j];
+        temp = b[j];
+        b[j] = a[i];
+        a[i] = temp;
+    }
+}
+
+out(cost);
 }
 
 int main(int argc, char const *argv[])

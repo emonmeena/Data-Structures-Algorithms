@@ -5,14 +5,12 @@ using namespace std;
 #define ll long long
 #define  fo(i, n) for(ll int i=0; i<n; i++)
 #define Fo(i, k, n) for(llint i=k; i<n; i++)
-// #define l long
 #define pb(i) push_back(i)
 #define e "\n" 
 #define traverseVector(i) for (auto i = v.begin(); i != v.end(); ++i) 
 #define rtraverseVector(i) for (auto ir = g1.rbegin(); ir != g1.rend(); ++ir)
 #define in(n) cin>>n
 #define out(n) cout<<n<<e
-// .fillArray
 
 ll int mid(ll int start, ll int end){
 return (start+end)/2;
@@ -93,7 +91,6 @@ void solve(){
 
 int main(int argc, char const *argv[])
 {
-// ios_base::sync_with_stdio(false);
 solve();
     return 0;
 }
