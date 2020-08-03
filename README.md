@@ -22,5 +22,5 @@ Here is the Link for the complete Guidelines.
 ## Algorithmic Resources
 * [hkirat](https://github.com/hkirat/Algorithmic-Resources)
 * [CS 97SI Introduction to Competitive Programming](http://web.stanford.edu/class/cs97si/)
-* [E-max algorithm](http://cp-algorithms.com/)
+* [E-Max algorithm](http://cp-algorithms.com/)
 * [Introduction to Algorithms](https://mitpress.mit.edu/books/introduction-algorithms)
