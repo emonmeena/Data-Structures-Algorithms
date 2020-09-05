@@ -50,17 +50,23 @@ void vectorDemo(){
 }
 
 void setDemo(){
-    set<int> s; 
+    multiset<int> s; 
 
     // O(logN)
     s.insert(1);
     s.insert(2);
     s.insert(2);  // ignored
-    s.insert(0);
-    s.insert(-100);  // sets automatically sorts data
-    
-    for(int x: s) cout<<x<<" ";
+    s.insert(2);
+    s.insert(2);
+    s.insert(2);
+    s.insert(100);
+    s.insert(400);  // sets automatically sorts data
+    auto i = s.begin();
+    for(i; i != s.end(); i++) cout<<*i<<" ";
     cout<<"\n";
+
+int p = *s.end()/2;
+cout<<" er2rjr "<<p<<"\n";
 
     auto it =  s.find(2);
     if(it == s.end()) cout<<"it is not present \n";
@@ -120,7 +126,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 
     //vectorDemo();
-    // setDemo();
-    mapDemo();
+    setDemo();
+    // mapDemo();
     // powerOfSTL();
 }

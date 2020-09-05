@@ -2,9 +2,9 @@
 using namespace std;
 
 #define gc getchar_unlocked
-#define  fo(i, n) for(int i=0; i<n; i++)
-#define Fo(i, k, n) for(int i=k; i<n; i++)
 #define ll long long
+#define  fo(i, n) for(ll int i=0; i<n; i++)
+#define Fo(i, k, n) for(int i=k; i<n; i++)
 #define l long
 #define pb(i) push_back(i)
 #define e "\n" 
@@ -15,64 +15,70 @@ using namespace std;
 // .fillArray
 
 void solve(){
-int n;
+ll int n, ele, cost = 0, diff;
 in(n);
 
-ll int a[n];
-ll int b[n];
-ll int k, cost = 0, temp;
-int j;
+multiset<ll int> s;
+map<ll int,ll int> m1;
+map<ll int, ll int> m2;
+
 
 fo(i, n){
-    in(a[i]);
+    in(ele);
+m1[ele]++;
 }
 fo(i, n){
-    in(b[i]);
+    in(ele);
+    m2[ele]++;
 }
 
-k = sizeof(a)/sizeof(a[0]);
-sort(a, a+k);
+auto it1 = m1.begin();
+auto it2 = m2.begin();
 
-k=sizeof(b)/sizeof(b[0]);
-sort(b, b+k);
+while (it1 != m1.end()){
 
-fo(i, n){
-    if(i==n-1 && a[i] != b[i]){
-        cost = -1;
-        break;
-    }
-    if(a[i] < b[i]){
-        j=i;
-        while(a[j] == a[i] && j < n){
-            j++;
-        }
-        j--;
-        if(i==j){
+    ele = it1 -> first;
+    n = it1 -> second;
+
+    if(n > m2[ele]){
+        diff = n-m2[ele];
+        if(diff % 2 == 0){
+            diff /=2;
+            while(diff-- > 0) s.insert(ele);
+        }else {
             cost = -1;
             break;
         }
-        cost += a[j];
-        temp = a[j];
-        a[j] = b[i];
-        b[i] = temp;
     }
-    else if(b[i] < a[i]){
-        j=i;
-        while(b[j] == b[i] && j < n){
-            j++;
-        }
-        j--;
-        if(i==j){
+    it1++;
+}
+while (it2 != m2.end()){
+    if(cost == -1) break;
+    ele = it2 -> first;
+    n = it2 -> second;
+
+    if(n > m1[ele]){
+        diff = n-m1[ele];
+        if(diff % 2 == 0){
+            diff /=2;
+            while(diff-- > 0) s.insert(ele);
+        }else {
             cost = -1;
             break;
         }
-        cost += b[j];
-        temp = b[j];
-        b[j] = a[i];
-        a[i] = temp;
+    }
+    it2++;
+}
+n = *s.end();
+
+if(cost != -1 && n%2 == 0){
+    n /=2;
+    for(ll int x: s){
+        cost +=x;
+        n--; 
+        if(n ==0) break;
     }
 }
-
 out(cost);
 }
 
