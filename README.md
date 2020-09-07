@@ -19,3 +19,8 @@ Here is the Link for the complete Guidelines.
 * [GFG roadmap to ACM ICPC](https://www.geeksforgeeks.org/how-to-prepare-for-acm-icpc/)
 * [Codechef 2020 complete process](https://www.codechef.com/icpc/2020)
 * [ACM ICPC 2020 Timeline](https://icpc.baylor.edu/worldfinals/schedule)
+## Algorithmic Resources
+* [hkirat](https://github.com/hkirat/Algorithmic-Resources)
+* [CS 97SI Introduction to Competitive Programming](http://web.stanford.edu/class/cs97si/)
+* [E-Max algorithm](http://cp-algorithms.com/)
+* [Introduction to Algorithms](https://mitpress.mit.edu/books/introduction-algorithms)
