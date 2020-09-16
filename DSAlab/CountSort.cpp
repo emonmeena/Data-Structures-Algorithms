@@ -17,26 +17,26 @@ void solve()
     int n, k;
     cin>>n;
     cin>>k; /* Range of the elements */
-    int Arr[k] = {0};
+    int arrk[k] = {0};
 
     int arr[n];
     for(int i=0; i<n; i++)
     {
         cin>>arr[i];
-        ++Arr[arr[i]];
+        ++arrk[arr[i]];
     }
 
     for(int i = 1; i<k; i++)
     {
-        Arr[i] += Arr[i-1]; 
+        arrk[i] += arrk[i-1]; 
     }
     
     int arrSorted[n], ele;
     for(int i=0; i<n; i++)
     {
         ele = arr[i];
-        arrSorted[Arr[ele]-1] = ele;
-        --Arr[ele];
+        arrSorted[arrk[ele]-1] = ele;
+        --arrk[ele];
     } 
     printArray(arrSorted, n);
 }

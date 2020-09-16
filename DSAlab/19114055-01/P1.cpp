@@ -1,3 +1,20 @@
+/*
+Masthead - 
+Owner - Master Mayank Meena 
+Enroll no. 19114055, O-3
+Code Editor - VSCode 2020
+Terminal - WSL Ubuntu 2020
+
+Contact - 
+Website - https://mayankmeena.netlify.app/
+Email - mayank_m@cs.iitr.ac.in
+
+Social -
+GitHub - https://github.com/maayami
+YouTube - https://www.youtube.com/channel/UCwcdyxP6uk5zso-L4lY4Y8g?view_as=subscriber
+Twitter - https://twitter.com/Meina_Mk
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -59,3 +76,4 @@ cin.tie(NULL);
     solve();
     return 0;
 }
+
