@@ -37,8 +37,7 @@ void countSort(int arr[], int n, int k, int p, int ran)
         /* incrementing count of each element */
         for(int m=0; m<n; m++)
         {
-            int temp = arr[m];
-            int radixEle = (temp&ran) / pow(4, p);
+            radixEle = (arr[m]&ran) / pow(4, p);
             arrCount[radixEle]++;
         }
         /* taking sum of neibhour counts in counting Array */
@@ -48,8 +47,7 @@ void countSort(int arr[], int n, int k, int p, int ran)
         }
         for(int i=n-1; i>=0; i--)
         {
-            int temp = arr[i];
-            int radixEle = (temp&ran) / pow(4, p);
+            radixEle = (arr[i]&ran) / pow(4, p);
             arrSorted[arrCount[radixEle]-1] = arr[i]; /* Since it returns position but we need index (ele-1) */
             arrCount[radixEle]--;
         }
