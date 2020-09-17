@@ -29,67 +29,68 @@ void printArray(int arr[], int n)
 
 void radixSort(int arr[], int n, int k)
 {
-    int arrK[k]={0}; /*Count array with length k */
-    int arrSorted[n];
-    int radixEle;
+    int arrCount[k]={0}; /*Count array with length k */
+    int arrSorted[n] = {0};
+    int radixEle = 0;
     int p=0;
 
-    for(int j=3; j<=192;){
-
-        for(int i=0; i<n; i++)
+    for(int j=3; j<=192; j*=4){
+        /* incrementing count of each element */
+        for(int m=0; m<n; m++)
         {
-            radixEle = (arr[i]&j) / pow(4, p);
-            arrK[radixEle]++;
+            int temp = arr[m];
+            int radixEle = (temp&j) / pow(4, p);
+            cout<<radixEle<<" ";
+            arrCount[radixEle]++;
         }
-        for(int i=1; i<k; i++)
+        cout<<" \n";
+        /* taking sum of neibhour counts in counting Array */
+        for(int l=1; l<k; l++)
         {
-            arrK[i] += arrK[i-1];
+            arrCount[l] += arrCount[l-1];
         }
         for(int i=n-1; i>=0; i--)
         {
-            int radixEle;
-            int kIndex;
-            radixEle = (arr[i]&j) / pow(4, p);
-            kIndex = arrK[radixEle];
-            arrSorted[kIndex-1] = arr[i]; /* Since it returns position but we need index (ele-1) */
-            arrK[radixEle]--;
-
+            int temp = arr[i];
+            int radixEle = (temp&j) / pow(4, p);
+            arrSorted[arrCount[radixEle]-1] = arr[i]; /* Since it returns position but we need index (ele-1) */
+            arrCount[radixEle]--;
         }
         /* we will rarrange the elements of our original array wrt arrSorted */
-        for(int i=0; i<n; i++)
+        for(int q=0; q<n; q++)
         {
-            arr[i] = arrSorted[i];
+            arr[q] = arrSorted[q];
         }
         /* Count Sort for one radix element ends */
 
-        j *=4;
         p++;
     }
 
     // Now we have arrSorted as our final sorted array, we print and check.
-    printArray(arrSorted, n);
+    printArray(arr, n);
 }
 
 void solve()
 {
-    int n;
-    cin>>n;
+    int n=5;
+    // cin>>n;
     /* number of array elements */
 
     int k = 4;
     /* range of each radix element is 0 to 3 in our case, so total 4 possibilities */
 
-    int arr[n];
+    int arr[n] = {50,34,3,2,1};
 
-    for(int i=0; i<n; i++)
-    {
-        cin>>arr[i];
-        if(arr[i] > 255)
-        cout<<"Please choose a number between [0-255]";
-    }
+    // for(int i=0; i<n; i++)
+    // {
+    //     cin>>arr[i];
+    //     if(arr[i] > 255)
+    //     cout<<"Please choose a number between [0-255]";
+    // }
 
     // we call radixSort on our array.
     radixSort(arr, n, k);
+    
 }
 
 int main(int argc, char const *argv[])
