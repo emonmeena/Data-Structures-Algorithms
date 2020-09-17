@@ -4,6 +4,7 @@ Owner - Master Mayank Meena
 Enroll no. 19114055, O-3
 Code Editor - VSCode 2020
 Terminal - WSL Ubuntu 2020
+Shell - git bash
 
 Contact - 
 Website - https://mayankmeena.netlify.app/
@@ -27,23 +28,19 @@ void printArray(int arr[], int n)
     cout<<"\n";
 }
 
-void radixSort(int arr[], int n, int k)
+void countSort(int arr[], int n, int k, int p, int ran)
 {
     int arrCount[k]={0}; /*Count array with length k */
     int arrSorted[n] = {0};
     int radixEle = 0;
-    int p=0;
 
-    for(int j=3; j<=192; j*=4){
         /* incrementing count of each element */
         for(int m=0; m<n; m++)
         {
             int temp = arr[m];
-            int radixEle = (temp&j) / pow(4, p);
-            cout<<radixEle<<" ";
+            int radixEle = (temp&ran) / pow(4, p);
             arrCount[radixEle]++;
         }
-        cout<<" \n";
         /* taking sum of neibhour counts in counting Array */
         for(int l=1; l<k; l++)
         {
@@ -52,44 +49,43 @@ void radixSort(int arr[], int n, int k)
         for(int i=n-1; i>=0; i--)
         {
             int temp = arr[i];
-            int radixEle = (temp&j) / pow(4, p);
+            int radixEle = (temp&ran) / pow(4, p);
             arrSorted[arrCount[radixEle]-1] = arr[i]; /* Since it returns position but we need index (ele-1) */
             arrCount[radixEle]--;
         }
-        /* we will rarrange the elements of our original array wrt arrSorted */
+        /* we will rearrange the elements of our original array wrt arrSorted */
         for(int q=0; q<n; q++)
         {
             arr[q] = arrSorted[q];
         }
         /* Count Sort for one radix element ends */
-
-        p++;
-    }
-
-    // Now we have arrSorted as our final sorted array, we print and check.
-    printArray(arr, n);
 }
 
 void solve()
 {
-    int n=5;
-    // cin>>n;
+    int n;
+    cin>>n;
     /* number of array elements */
 
     int k = 4;
     /* range of each radix element is 0 to 3 in our case, so total 4 possibilities */
 
-    int arr[n] = {50,34,3,2,1};
+    int arr[n];
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+        if(arr[i] > 255)
+        cout<<"Please choose a number between [0-255]";
+    }
 
-    // for(int i=0; i<n; i++)
-    // {
-    //     cin>>arr[i];
-    //     if(arr[i] > 255)
-    //     cout<<"Please choose a number between [0-255]";
-    // }
+    /*
+    Radix Sort begins - 
+    we call countSort on our array for all radix elements. */
+    for(int i=0; i<4; i++)
+    countSort(arr, n, k, i, 3*pow(4, i));
+    /* Radix Sort ends */
 
-    // we call radixSort on our array.
-    radixSort(arr, n, k);
+    printArray(arr, n);
     
 }
 

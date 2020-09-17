@@ -4,6 +4,7 @@ Owner - Master Mayank Meena
 Enroll no. 19114055, O-3
 Code Editor - VSCode 2020
 Terminal - WSL Ubuntu 2020
+Shell - git bash
 
 Contact - 
 Website - https://mayankmeena.netlify.app/
