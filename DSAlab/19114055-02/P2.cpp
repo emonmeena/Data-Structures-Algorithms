@@ -1,78 +1,106 @@
+/*
+Masthead - 
+Submitted by - Mayank Meena 
+Enroll no. - 19114055
+Batch - O-3
+Code Editor - VSCode 2020
+Terminal - WSL Ubuntu 2020
+Shell - git bash
+
+Contact -
+Website - https://mayankmeena.netlify.app/
+Email - mayank_m@cs.iitr.ac.in
+
+Social -
+GitHub - https://github.com/maayami
+YouTube - https://www.youtube.com/channel/UCwcdyxP6uk5zso-L4lY4Y8g?view_as=subscriber
+Twitter - https://twitter.com/Meina_Mk
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
-struct Student
+struct Node
 {
-    string ID;
-    string fullName;
-    string courseCode;
-    string branch;
+public:
     int age;
-
-    Student *next;
+    Node* next;
 };
 
-void printList(Student *Head)
+
+Node* createList(int age)
 {
-    Student *temp = Head;
-    while(true)
-    {
-        cout<<Head->age<<" ";
-        if(Head->next == NULL) break;
-        Head = Head->next;
-    }
-    Head = temp;
-    cout<<"\n";
+    Node* head = NULL;
+    head = new Node();
+    head->age = age;
+    head->next == NULL;
+    return head;
 }
 
-void insertNode(Student *Head, Student *Temp)
+/* addEleToList function adds elements
+to thier respective positions and return
+head pointer accordingly*/
+
+Node* addEleToList(Node* head ,int age)
 {
-    Student *S = Head;
-    while(true)
-    {
-        if(Temp->age <= S->age)
-        {
-            
-        }
-        if(S->next == NULL) break;
-        S=S->next;
+    Node* temp = NULL;
+    Node* temp2 = NULL;
+    temp = new Node();
+    temp->age = age;
+    temp->next = NULL;
+
+    if(age < head->age){
+        temp->next=head;
+        return temp;
     }
+    while(head->next != NULL )
+    {
+        if(age < head->next->age) break;
+        head = head->next;
+    }
+    temp2 = head->next;
+    head->next = temp;
+    temp->next = temp2;
+
+    return head;
+}
+
+void printList(Node* head)
+{
+    while(head->next != NULL)
+    {
+    cout<<head->age<<" ";
+    head = head->next;
+    }
+    cout<<head->age<<"\n";
 }
 
 void solve()
 {
-    int n=5;
-    
-    Student *Head = NULL;
-    Head = new Student();
-    Head->age = 19;
+    int n;
+    /*Enter the number of students */
+    cin>>n;
 
-    for(int i=1; i<=n; i++)
+    /* Declaring the basic variables*/
+    int age;
+    /*Enter the choice for student 1*/
+    cin>>age;
+    /*Creating head Node for the linkedlist */
+    Node* h1 = createList(age);
+    /* add elements to list List*/
+    for(int i=1; i<n; i++)
     {
-        Student *Temp = NULL;
-        Temp = new Student();
-        Temp->age = i;
-
-        insertNode(Head, Temp);
+        cin>>age;
+        h1 = addEleToList(h1, age);
     }
 
-    printList(Head);
+    printList(h1);
 }
 
 int main(int argc, char const *argv[])
-{   
+{
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);    
+
     solve();
     return 0;
 }
-
-        // cout<<"Enter the choice for student "<<i<<"\n R for Roll no. \n M for Mobile no. \n O for other unique ID: ";
-        // cin>> student.ID;
-
-        // cout<<"Enter 10-digits "<<" "<<" of the student "<<i<<": ";
-        // cin>>student.ID;
-        // cout<<"Enter Full name of the student "<<i<<": ";
-        // cin>>student.fullName;
-        // cout<<"Enter age of the student "<<i<<": ";
-        // cin>>student.age;
-        // cout<<"Enter branch of the student "<<i<<": ";
-        // cin>>student.branch;
