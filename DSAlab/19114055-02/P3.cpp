@@ -19,6 +19,9 @@ Twitter - https://twitter.com/Meina_Mk
 #include<bits/stdc++.h>
 using namespace std;
 
+// Capacity and size are declared gloabally.
+int capacity = 100, size=1;
+
 union Data
 {
 public:
@@ -73,11 +76,23 @@ bool isEmpty(Node* stackTop)
     return false;
 }
 
+bool isFull(int size, int capacity)
+{
+    if(size == capacity){
+        cout<<"Stack Overflowed. Cannot insert more elements than 100.\n";
+        return true;
+    }
+    return false;
+}
+
 void push(Node** stackTop, char type)
 {
+    if(!isFull(size, capacity))
+    {
     Node* temp = createNode(type);
     temp->next = *stackTop;
     *stackTop = temp;
+    }
 }
 
 Node* pop(Node** stackTop)
@@ -118,6 +133,8 @@ void showStack(Node* stackTop)
     }
 }
 
+
+
 void solve()
 {
     
@@ -125,11 +142,12 @@ void solve()
     // Declairing the basic variables
     Node* stack = NULL;
     char type='I', opt = 'I';
-    int i=-1;
     // Creating and operating the stack
+    cin>>opt;
+    cin>>type;
+    stack = createNode(type);
     while(true)
     {
-        i++;
         // cout<<"Enter your choice: \n"<<"I for Insert\n"<<"D for Delete\n"<<"E for Exit\n"<<"P for Print\n";
         cin>>opt;
         if(opt == 'E') 
@@ -141,13 +159,14 @@ void solve()
         {
             // cout<<"Enter ​I​ for integer, ​C​ for char and ​F​ for float: ";
             cin>>type;
-            if(i==0) stack = createNode(type);
-            else push(&stack, type);
+            push(&stack, type);
+            size++;
         }
         if(opt == 'D')
         {
             cout<<"The popped element is: ";
             pop(&stack);
+            size--;
         }    
         if(opt == 'P') 
         showStack(stack);
