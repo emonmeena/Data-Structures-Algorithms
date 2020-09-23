@@ -1,6 +1,6 @@
 /*
 Masthead - 
-Owner - Mayank Meena 
+Submitted by - Mayank Meena 
 Enroll no. - 19114055
 Batch - O-3
 Code Editor - VSCode 2020
@@ -125,11 +125,9 @@ void showStack(Node* stackTop)
     cout<<"The stack is empty\n";
     else
     {
-    Node* dTemp;
-    char type;
     cout<<"The current status of the stack is - \n";
     while(!isEmpty(stackTop))
-    dTemp = pop(&stackTop);
+    pop(&stackTop);
     }
 }
 
