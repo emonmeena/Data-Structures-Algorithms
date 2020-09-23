@@ -21,16 +21,15 @@ using namespace std;
 
 union data
 {
-    int i;
-    char c;
-    float f;
+int i;
+char ch;
+float f;
 };
 
 void solve(){
-char letter;
-cout << "Enter a letter: ";
-cin >> letter;
-cout << letter;
+    data d;
+    d.i = 5;
+    cout<<d<<"\n";
 }
 
 int main(int argc, char const *argv[])

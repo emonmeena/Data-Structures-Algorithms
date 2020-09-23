@@ -2,6 +2,21 @@
     "python.pythonPath": "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python36\\python.exe",
     "files.associations": {
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "any": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "functional": "cpp",
+        "istream": "cpp",
+        "memory_resource": "cpp",
+        "ratio": "cpp",
+        "scoped_allocator": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "variant": "cpp",
+        "*.tcc": "cpp",
+        "random": "cpp",
+        "regex": "cpp"
     }
 }
