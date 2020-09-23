@@ -64,13 +64,13 @@ Node* queueRear = NULL;
 
 void dOut(Node* dTemp, char type)
 {
-    if(type == 'I') 
+    if(type == 'I')
         cout<<dTemp->d.i;
     if(type == 'C')
         cout<<dTemp->d.ch;
     if(type == 'F')
         cout<<dTemp->d.f;
-    cout<<"\n";    
+    cout<<"\n";
 }
 
 bool isEmpty(Node* Front)
@@ -88,7 +88,7 @@ bool isFull(int size, int capacity)
     return false;
 }
 
-void push(char type)
+void Insert(char type)
 {
     if(!isFull(size, capacity))
     {
@@ -96,10 +96,11 @@ void push(char type)
     queueRear->next = newNode;
     queueRear = newNode;
     queueRear->next = queueFront;
+    // Since Circular queue
     }
 }
 
-Node* pop(Node** Front)
+Node* Delete(Node** Front)
 {
     if(isEmpty(*Front))
     {
@@ -112,6 +113,7 @@ Node* pop(Node** Front)
     else *Front = (*Front)->next;
     dOut(temp, temp->type);
     queueRear->next = queueFront;
+    // Since Circular queue
     return temp;
 }
 
@@ -123,7 +125,7 @@ void showQueue(Node* tempFront)
     {
     cout<<"The current status of the queue is - \n";
     while(!isEmpty(tempFront))
-    pop(&tempFront);
+    Delete(&tempFront);
     }
 }
 
@@ -153,13 +155,13 @@ void solve()
                 queueRear = queueFront;
             }
             else
-            push(type);
+            Insert(type);
             size++;
         }
         if(opt == 'D')
         {
-            cout<<"The popped element is: ";
-            pop(&queueFront);
+            cout<<"The deleted element is: ";
+            Delete(&queueFront);
             size--;
         }
         if(opt == 'P')

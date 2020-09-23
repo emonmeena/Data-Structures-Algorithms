@@ -141,9 +141,6 @@ void solve()
     Node* stack = NULL;
     char type='I', opt = 'I';
     // Creating and operating the stack
-    cin>>opt;
-    cin>>type;
-    stack = createNode(type);
     while(true)
     {
         // cout<<"Enter your choice: \n"<<"I for Insert\n"<<"D for Delete\n"<<"E for Exit\n"<<"P for Print\n";
@@ -155,8 +152,10 @@ void solve()
         }    
         if(opt == 'I')
         {
-            // cout<<"Enter ​I​ for integer, ​C​ for char and ​F​ for float: ";
+            // cout<<"Enter ​I​ for integer,C​ for char and ​F​ for float: ";
             cin>>type;
+            if(stack == NULL) stack = createNode(type);
+            else
             push(&stack, type);
             size++;
         }
