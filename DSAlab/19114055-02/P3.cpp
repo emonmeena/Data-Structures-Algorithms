@@ -84,7 +84,7 @@ Node* pop(Node** stackTop)
 {
     if(isEmpty(*stackTop))
     {
-        cout<<"The stack is empty\n";
+        cout<<"The stack is empty Underflow condition \n";
         return NULL;
     }
     Node* temp = *stackTop;
@@ -123,12 +123,14 @@ void solve()
     
     // Testing all operations
     // Declairing the basic variables
-    Node* stack;
+    Node* stack = NULL;
     char type='I', opt = 'I';
+    int i=-1;
     // Creating and operating the stack
     while(true)
     {
-        cout<<"Enter your choice: \n"<<"I for Insert\n"<<"D for Delete\n"<<"E for Exit\n"<<"P for Print\n";
+        i++;
+        // cout<<"Enter your choice: \n"<<"I for Insert\n"<<"D for Delete\n"<<"E for Exit\n"<<"P for Print\n";
         cin>>opt;
         if(opt == 'E') 
         {
@@ -137,9 +139,10 @@ void solve()
         }    
         if(opt == 'I')
         {
-            cout<<"Enter  ​I​ for integer, ​C​ for char and ​F​ for float: ";
+            // cout<<"Enter ​I​ for integer, ​C​ for char and ​F​ for float: ";
             cin>>type;
-            push(&stack, type);
+            if(i==0) stack = createNode(type);
+            else push(&stack, type);
         }
         if(opt == 'D')
         {
@@ -147,46 +150,14 @@ void solve()
             pop(&stack);
         }    
         if(opt == 'P') 
-        {
-            cout<<"The Current Status of your stack is: \n";
-            showStack(stack);
-        }
+        showStack(stack);
     }
-    // cin>>type;
-    // stack = createNode(type);
-    // cin>>type;
-    // push(&stack, type);
-    // cin>>type;
-    // push(&stack, type);
-    // cin>>type;
-    // push(&stack, type);
-    // showStack(stack);
-    // cout<<"The popped element is: ";
-    // pop(&stack);
-    // showStack(stack);
-    // cout<<"the top element: ";
-    // top(stack);
-    // cout<<"isEmpty: ";
-    // cout<<isEmpty(stack);
-    // cout<<"\nThe popped element is: ";
-    // pop(&stack);
-    // cout<<"The popped element is: ";
-    // pop(&stack);
-    // cout<<"The popped element is: ";
-    // pop(&stack);
-    // cout<<"The popped element is: ";
-    // pop(&stack);
-    // // showStack(stack);
-    // cout<<"The popped element is: ";
-    // pop(&stack);
-    // top(stack);
-    // showStack(stack);
 }
 
 int main(int argc, char const *argv[])
 {
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);    
+// ios_base::sync_with_stdio(false);
+// cin.tie(NULL);    
 
     solve();
     return 0;

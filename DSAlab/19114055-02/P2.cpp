@@ -83,7 +83,7 @@ void printList(Node* head)
 void solve()
 {
     int n;
-    cout<<"Enter the number of students: ";
+    // cout<<"Enter the number of students: ";
     cin>>n;
 
     /* Declaring the basic variables*/
@@ -97,19 +97,19 @@ void solve()
     /* add elements to list List*/
     for(int i=0; i<n; i++)
     {
-        cout<<"Enter choice for student - "<<": ";
+        // cout<<"Enter choice for student - "<<": ";
         cin>>idType;
-        cout<<"ID: ";
+        // cout<<"ID: ";
         cin>>id;
         cin.ignore();
-        cout<<"Name: ";
+        // cout<<"Name: ";
             getline(cin, name);
             /* coz cin terminates by space */
-        cout<<"Course: ";
+        // cout<<"Course: ";
             cin>>course;
-        cout<<"Age: ";
+        // cout<<"Age: ";
             cin>>age;
-        cout<<"branch: ";
+        // cout<<"branch: ";
             cin>>branch;
         if(i==0)
         h1 = createNode(id, name, course, age, branch);
