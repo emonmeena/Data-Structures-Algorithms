@@ -68,14 +68,11 @@ void solve(){
 
     // cout<<"Enter the Kth smallest you want to find: \n";
     cin>>k;
-    try
-    {
-        find(arr, n, k);
-    }
-    catch(const std::exception& e)
-    {
-        cout<<"Please choose a number less then size of array.\n";
-    }
+    if(k > n)
+    cout<<"Please choose a number between bound size of array.\n";
+    else
+    find(arr, n, k);
+        
 }
 
 int main(int argc, char const *argv[])

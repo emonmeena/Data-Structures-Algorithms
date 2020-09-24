@@ -21,7 +21,8 @@ Twitter - https://twitter.com/Meina_Mk
 using namespace std;
 
 // Capacity and size are declared gloabally.
-int capacity = 100, size=1;
+
+int capacity = 100, Size=2;
 
 union Data
 {
@@ -77,9 +78,9 @@ bool isEmpty(Node* stackTop)
     return false;
 }
 
-bool isFull(int size, int capacity)
+bool isFull()
 {
-    if(size == capacity){
+    if(Size == capacity){
         cout<<"Stack Overflowed. Cannot insert more elements than 100.\n";
         return true;
     }
@@ -88,7 +89,7 @@ bool isFull(int size, int capacity)
 
 void push(Node** stackTop, char type)
 {
-    if(!isFull(size, capacity))
+    if(!isFull())
     {
     Node* temp = createNode(type);
     temp->next = *stackTop;
@@ -139,6 +140,7 @@ void solve()
     
     // Testing all operations
     // Declairing the basic variables
+
     Node* stack = NULL;
     char type='I', opt = 'I';
     // Creating and operating the stack
@@ -158,13 +160,13 @@ void solve()
             if(stack == NULL) stack = createNode(type);
             else
             push(&stack, type);
-            size++;
+            Size++;
         }
         if(opt == 'D')
         {
             cout<<"The popped element is: ";
             pop(&stack);
-            size--;
+            Size--;
         }    
         if(opt == 'P') 
         showStack(stack);

@@ -21,7 +21,7 @@ Twitter - https://twitter.com/Meina_Mk
 using namespace std;
 
 // Capacity and size are declared gloabally.
-int capacity = 100, size=0;
+int capacity = 100, Size=0;
 
 union Data
 {
@@ -80,9 +80,9 @@ bool isEmpty(Node* Front)
     return false;
 }
 
-bool isFull(int size, int capacity)
+bool isFull()
 {
-    if(size == capacity){
+    if(Size == capacity){
         cout<<"Queue Overflowed. Cannot insert more elements than"<<capacity<<"\n";
         return true;
     }
@@ -91,7 +91,7 @@ bool isFull(int size, int capacity)
 
 void Insert(char type)
 {
-    if(!isFull(size, capacity))
+    if(!isFull())
     {
     Node* newNode = createNode(type);
     queueRear->next = newNode;
@@ -157,13 +157,13 @@ void solve()
             }
             else
             Insert(type);
-            size++;
+            Size++;
         }
         if(opt == 'D')
         {
             cout<<"The deleted element is: ";
             Delete(&queueFront);
-            size--;
+            Size--;
         }
         if(opt == 'P')
         showQueue(queueFront);
