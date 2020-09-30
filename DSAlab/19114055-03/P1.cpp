@@ -84,10 +84,16 @@ void printSeats()
     cout<<"Flight occupancy status is: \n";
     for(int i=0; i<rows; i++)
     {
-        for(int j=0; j<cols; j++)
+        for(int j=0; j<cols/2; j++)
         {
-            if(j == cols/2)
-            cout<<"|| ";
+            if(seats[i][j] != 0)
+            cout<<"P";
+            cout<<seats[i][j]<<" ";
+
+        }
+        cout<<"|| ";
+        for(int j=cols-1; j>=cols/2; j--)
+        {
             if(seats[i][j] != 0)
             cout<<"P";
             cout<<seats[i][j]<<" ";
@@ -149,7 +155,6 @@ void solve()
         }
         else if(opt[1] == '2')
         {
-        cout<<"exit\n";
             processInput();
             exit();
         }
