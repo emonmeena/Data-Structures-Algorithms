@@ -21,10 +21,11 @@ Twitter - https://twitter.com/Meina_Mk
 using namespace std;
 
 // Declairing the basic variables without using string, hence optimizing the space.
-    char passID[3], opt[2], colTemp;
-    int x, y, ele;
+char passID[3], colTemp;
+int x, y, ele;
 
-const int rows=5, cols=6;
+// I have created a 2D array...
+const int rows=10, cols=6; //it is modifiable according to the need.
 int seats[rows][cols] = {0};
 
 bool isAvailable(int x, int y)
@@ -35,45 +36,38 @@ bool isAvailable(int x, int y)
 
 void push()
 {
-    int e = (y < 5)?4:9;
+    int e = (y < 3)?2:5;
     for(int i=e; i>y; i--)
     {
         if(!isAvailable(x, i))
-        {
             cout<<"Pop P"<<seats[x][i]<<"\n";
-        }
     }
     seats[x][y] = ele;
     for(int i=y; i<=e; i++)
     {
         if(!isAvailable(x, i))
-        {
             cout<<"Push P"<<seats[x][i]<<"\n";
-        }
     }
 }
 
 void exit()
 {
     if(seats[x][y] == 0)
-    cout<<"Error: Passanger does not exist at requested position.\n";
+    cout<<"Error: Passenger does not exist at requested position.\n";
     else
     {
-        int e = (y < 5)?4:9;
+        // Cols will always be even in these type.
+        int e = (y < cols/2)?(cols/2-1):(cols-1);
         for(int i=e; i>=y; i--)
         {
             if(!isAvailable(x, i))
-            {
                 cout<<"Pop P"<<seats[x][i]<<"\n";
-            }
         }
         seats[x][y] = 0;
         for(int i=y+1; i<=e; i++)
         {
             if(!isAvailable(x, i))
-            {
                 cout<<"Push P"<<seats[x][i]<<"\n";
-            }
         }
 
     }
@@ -82,22 +76,22 @@ void exit()
 void printSeats()
 {
     cout<<"Flight occupancy status is: \n";
+    cout<<"      A     B     C     ||      F     E     D\n";
     for(int i=0; i<rows; i++)
     {
+        cout<<"Row"<<i+1<<": ";
         for(int j=0; j<cols/2; j++)
         {
             if(seats[i][j] != 0)
             cout<<"P";
-            cout<<seats[i][j]<<" ";
-
+            cout<<seats[i][j]<<"     ";
         }
-        cout<<"|| ";
+        cout<<"||      ";
         for(int j=cols-1; j>=cols/2; j--)
         {
             if(seats[i][j] != 0)
             cout<<"P";
-            cout<<seats[i][j]<<" ";
-
+            cout<<seats[i][j]<<"     ";
         }
         cout<<"\n";
     }
@@ -105,15 +99,15 @@ void printSeats()
 
 void fullExit()
 {
-    cout<<"The Lifo order of passanger exit is:\n";
+    cout<<"The LIFO order of passengers is:\n";
     for(int i=0; i<rows; i++)
     {
-        for(int j=2; j>-1; j--)
+        for(int j=cols/2-1; j>-1; j--)
         {   
             if(!isAvailable(i, j))
             cout<<"Pop P"<<seats[i][j]<<"\n";
         }
-        for(int j=5; j>2; j--)
+        for(int j=cols-1; j>cols/2-1; j--)
         {
             if(!isAvailable(i, j))
             cout<<"Pop P"<<seats[i][j]<<"\n";
@@ -136,7 +130,7 @@ void processInput()
 
 void solve()
 {
-    
+    char opt[2]; //avoiding string size optimization.
 
     while(true)
     {
@@ -146,7 +140,7 @@ void solve()
 
         if(opt[1] == '1')
         {
-        // cout<<"entry\n";
+            // cout<<"entry\n";
             processInput();
 
             if(isAvailable(x, y))
@@ -155,24 +149,25 @@ void solve()
         }
         else if(opt[1] == '2')
         {
+            // cout<<"exit\n";
             processInput();
             exit();
         }
 
-        else if(opt[0] == 'E')
-        // cout<<"break\n";
+        else if(opt[0] == 'E'){
+            cout<<"Program is stopped.\n";
             break;
+        }
 
         if(opt[0] == 'P')
-        // cout<<"Print\n";
+            // cout<<"Print\n";
             printSeats();
 
         if(opt[0] == 'X')
-        // cout<<"fullExit\n";
+            // cout<<"fullExit\n";
             fullExit();
     }
 
-    cout<<"P"<<ele<<" "<<x<<" "<<y<<"\n";
 }
 
 int main(int argc, char const *argv[])
