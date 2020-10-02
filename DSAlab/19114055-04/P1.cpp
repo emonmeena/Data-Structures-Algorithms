@@ -68,6 +68,7 @@ char Stack::pop()
 
 char Stack::topEle()
 {
+    if(top == NULL) return '0';
     return top->data;
 }
 
@@ -82,7 +83,7 @@ void Stack::printStack()
 }
 
 void solve(){
-    char str[] = "))";
+    char str[] = "[{()}]";
     
     Stack s;
     //Another way is: 
@@ -92,22 +93,26 @@ void solve(){
     int i=0;
     while(str[i])
     {
-        if(str[i] == '[' || str[i] == '{' || str[i] == '(')
-        {
-            s.push(str[i]);
-        }
         if(str[i] == ')' || str[i] == '}' || str[i] == ']')
         {
             int temp = s.pop();
             if(! (temp+1 == (int)str[i] || temp+2 == (int)str[i]))
                 {
-                    cout<<"Not balanced\n";
+                    cout<<"Error: Not balanced"<<str[i]<<"\n";
                     break;
                 }    
         }
-        
+
+        else if(str[i] == '[' && s.topEle() != '{' && s.topEle() != '(')
+            s.push(str[i]);
+        else if(str[i] == '{' && s.topEle() != '(')
+            s.push(str[i]);
+        else if(str[i] == '(') s.push(str[i]);
+        else cout<<"Error: Invalid Priority\n";
+
         i++;
     }
+    if(s.topEle() != '0') cout<<"Error: Not balanced\n";
 }
 
 int main(int argc, char const *argv[])
