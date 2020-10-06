@@ -82,7 +82,9 @@ void solve(){
     B.push(0, 5);
     B.push(1, 5);
 
-    addTwoLinkedLists(A, B);
+    // addTwoLinkedLists(A, B);
+    A.printList();
+    B.printList();
 }
 
 int main(int argc, char const *argv[])
