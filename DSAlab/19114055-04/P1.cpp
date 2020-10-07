@@ -83,7 +83,8 @@ void Stack::printStack()
 }
 
 void solve(){
-    char str[] = "[{()}]";
+    char str[50];
+    cin>>str;
     
     Stack s;
     //Another way is: 
@@ -95,24 +96,45 @@ void solve(){
     {
         if(str[i] == ')' || str[i] == '}' || str[i] == ']')
         {
-            int temp = s.pop();
+            int temp = s.topEle();
             if(! (temp+1 == (int)str[i] || temp+2 == (int)str[i]))
                 {
-                    cout<<"Error: Not balanced"<<str[i]<<"\n";
-                    break;
-                }    
+                    cout<<"Error: Unbalanced "<<(char)temp<<"and"<<str[i]<<"\n";
+                }
+            else
+                s.pop();
         }
 
-        else if(str[i] == '[' && s.topEle() != '{' && s.topEle() != '(')
-            s.push(str[i]);
-        else if(str[i] == '{' && s.topEle() != '(')
-            s.push(str[i]);
+        else if(str[i] == '[')
+        {
+            if(s.topEle() == '{')
+            {
+                cout<<"Error: Missing priority {} and []\n";
+                s.push(str[i]);
+            }
+            else if(s.topEle() == '(')
+            {
+                cout<<"Error: Missing priority () and []\n";
+                s.push(str[i]);
+            }
+            else
+                s.push(str[i]);
+        }
+        else if(str[i] == '{')
+        {
+            if(s.topEle() == '(')
+            {
+                cout<<"Error: Missing priority () and {}\n";
+                s.push(str[i]);
+            }
+            else
+                s.push(str[i]);
+        }
         else if(str[i] == '(') s.push(str[i]);
-        else cout<<"Error: Invalid Priority\n";
 
         i++;
     }
-    if(s.topEle() != '0') cout<<"Error: Not balanced\n";
+    if(s.topEle() != '0') cout<<"Error: Unbalanced "<<s.pop()<<"\n";
 }
 
 int main(int argc, char const *argv[])

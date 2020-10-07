@@ -37,7 +37,7 @@ class LinkedList
     Node* head();
 };
 
-void LinkedList::push(int pow, int cof)
+void LinkedList::push(int cof, int pow)
 {
     Node* temp = new Node();
     temp->pow = pow;
@@ -52,7 +52,8 @@ void LinkedList::printList()
     Node* tempHead = last;
     while(tempHead != NULL)
     {
-        cout<<tempHead->cof<<"x^"<<tempHead->pow<<" + ";
+        cout<<tempHead->cof<<"x^"<<tempHead->pow;
+        if(tempHead->next) cout<<" + ";
         tempHead = tempHead->next;
     }
     cout<<"\n";
@@ -63,34 +64,56 @@ Node* LinkedList::head()
     return last;
 }
 
-LinkedList addTwoLinkedLists(LinkedList A, LinkedList B)
+LinkedList addTwoLinkedLists(LinkedList &A, LinkedList &B)
 {
+    Node* tempA = (A.head()->pow > B.head()->pow)?A.head():B.head();
+    Node* tempB = (A.head()->pow < B.head()->pow)?A.head():B.head();
+    Node* temp;
     
-    
+        while(tempB)
+        {
+            while(tempA->next && tempB->pow <= tempA->next->pow)
+                tempA = tempA->next;
 
-    return A;
+            if(tempA->pow == tempB->pow)
+            {
+                tempA->cof += tempB->cof;
+                tempB = tempB->next;
+            }
+            else
+            {
+                temp = tempB->next;
+                tempB->next = tempA->next;
+                tempA->next = tempB;
+                tempB = temp;
+            }
+        }
+    
+    return (A.head()->pow > B.head()->pow)?A:B;
 }
 
 void solve(){
-    // pow, coeff
-    LinkedList A;
-    A.push(0, 2);
-    A.push(1, 4);
-    A.push(2, 5);
+    int t, cof, pow;
+    LinkedList LL[3];
+    
+    for(int i=0; i<3; i++){
+        cin>>t;
+        while(t--)
+        {
+            cin>>cof>>pow;
+            LL[i].push(cof, pow);
+        }
+    }
 
-    LinkedList B;
-    B.push(0, 5);
-    B.push(1, 5);
-
-    // addTwoLinkedLists(A, B);
-    A.printList();
-    B.printList();
+    LL[0] = addTwoLinkedLists(LL[0], LL[1]);
+    // A.printList();
+    addTwoLinkedLists(LL[0], LL[2]).printList();
 }
 
 int main(int argc, char const *argv[])
 {
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);    
+// ios_base::sync_with_stdio(false);
+// cin.tie(NULL);
 
     solve();
     return 0;
