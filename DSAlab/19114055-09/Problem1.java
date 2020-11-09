@@ -35,7 +35,7 @@ public class Problem1 {
         }
         
         // Call BFSTraversal and DFSTraversal methods of class graphTraversal
-        graphTraversal.BFSTraversal(adjacencyMatrix);
+        // graphTraversal.BFSTraversal(adjacencyMatrix);
         graphTraversal.DFSTraversal(adjacencyMatrix);
 
 
@@ -47,14 +47,16 @@ public class Problem1 {
 // Solution to part a of P1
 class graphTraversal {
 
-    public static void BFSTraversal(int[][] adjacencyMatrix){
+    static int var = 4;
 
+    public static void BFSTraversal(int[][] adjacencyMatrix){
         Queue<Integer> adjacentNodestoVisitedQueue = new LinkedList<>();
         boolean isVisited[] = new boolean[adjacencyMatrix.length];
 
         adjacentNodestoVisitedQueue.add(0); //Since the first node is 0
         int currentNode = adjacentNodestoVisitedQueue.peek();
         isVisited[currentNode] = true;
+        System.out.print("BFS: ");
 
         while (adjacentNodestoVisitedQueue.peek() != null) {
             currentNode = adjacentNodestoVisitedQueue.poll();
@@ -72,7 +74,27 @@ class graphTraversal {
 
     public static void DFSTraversal(int[][] adjacencyMatrix){
         Stack<Integer> exploredNodesofVisitedStack = new Stack<>();
-        boolean isVisited[] = {false};
+        boolean isVisited[]  = new boolean[adjacencyMatrix.length];
+
+        exploredNodesofVisitedStack.push(0); //start node is 0
+        System.out.print("DFS: "+0+" ");
+        isVisited[0] = true;
+        int currentNode;
+
+        while(!exploredNodesofVisitedStack.empty()){
+            currentNode = exploredNodesofVisitedStack.peek();
+            
+            for (int i = 0; i < adjacencyMatrix.length; i++) {
+                if(adjacencyMatrix[currentNode][i] == 1 && !isVisited[i]){
+                    exploredNodesofVisitedStack.push(i);
+                    System.out.print(i+" ");
+                    isVisited[i] = true;
+                    break;
+                }
+                if(i == adjacencyMatrix.length-1)
+                    exploredNodesofVisitedStack.pop();
+            }
+        }
 
     }
     
