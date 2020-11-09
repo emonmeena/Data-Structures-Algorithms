@@ -87,6 +87,7 @@ class P3{
          in_order(binary_tree,no_of_nodes,0,inorder);
          int ans = min_swaps_required(inorder,no_of_nodes);
          System.out.println(ans);
+         sc.close();
         
     }
 }

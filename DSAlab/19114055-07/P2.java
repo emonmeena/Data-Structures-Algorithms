@@ -45,5 +45,6 @@ class P2{
        System.out.println("The Postorder Traversal is: ");
 
        postorder(inOrder, preOrder, 0, num_of_nodes-1);
+       input.close();
    }
 }

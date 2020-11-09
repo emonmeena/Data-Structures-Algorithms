@@ -17,5 +17,6 @@ class P1{
         int a=1,b=2;
         long nNodes = minNodes(h,a,b);
         System.out.println("Number of nodes: "+nNodes);
+        sc.close();
     }
 }
