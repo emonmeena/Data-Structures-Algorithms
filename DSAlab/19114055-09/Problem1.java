@@ -35,8 +35,10 @@ public class Problem1 {
         }
         
         // Call BFSTraversal and DFSTraversal methods of class graphTraversal
-        // graphTraversal.BFSTraversal(adjacencyMatrix);
+        graphTraversal.BFSTraversal(adjacencyMatrix);
         graphTraversal.DFSTraversal(adjacencyMatrix);
+
+        edgeRemoval.sameBFSandDFS(adjacencyMatrix);
 
 
         inputs.close();
@@ -46,8 +48,6 @@ public class Problem1 {
 
 // Solution to part a of P1
 class graphTraversal {
-
-    static int var = 4;
 
     public static void BFSTraversal(int[][] adjacencyMatrix){
         Queue<Integer> adjacentNodestoVisitedQueue = new LinkedList<>();
@@ -95,9 +95,57 @@ class graphTraversal {
                     exploredNodesofVisitedStack.pop();
             }
         }
-
+        System.out.println();
     }
     
+}
+
+class edgeRemoval{
+
+    public static void sameBFSandDFS(int[][] adjacencyMatrix){
+        Queue<Integer> adjacentNodestoVisitedQueue = new LinkedList<>();
+        Queue<Integer> removedEdges = new LinkedList<>();
+        boolean isVisited[]  = new boolean[adjacencyMatrix.length];
+        int nOfEdgesRemoved = 0;
+        adjacentNodestoVisitedQueue.add(0);
+
+        int currentNode = adjacentNodestoVisitedQueue.peek();
+        isVisited[currentNode] = true;
+
+        while (adjacentNodestoVisitedQueue.peek() != null) {
+            currentNode = adjacentNodestoVisitedQueue.poll();
+            
+
+            if(adjacentNodestoVisitedQueue.peek() == null)
+                for (int i = 0; i < adjacencyMatrix.length; i++) {
+                    if(adjacencyMatrix[currentNode][i] == 1 && !isVisited[i]){
+                        adjacentNodestoVisitedQueue.add(i);
+                        isVisited[i] = true;
+                    }
+                }
+            else {
+                int nextNode = adjacentNodestoVisitedQueue.peek();
+                for (int i = 0; i < adjacencyMatrix.length; i++) {
+                    if(adjacencyMatrix[currentNode][i] == 1){
+                        if(!isVisited[i] || isVisited[i] && i>nextNode ){
+                            adjacencyMatrix[i][currentNode] = 0;
+                            adjacencyMatrix[currentNode][i] = 0;
+                            nOfEdgesRemoved++;
+                            removedEdges.add(currentNode);
+                            removedEdges.add(i);
+                        }
+                    }
+                }    
+            }
+
+        }
+        System.out.println(nOfEdgesRemoved);
+        while(nOfEdgesRemoved-->-1){
+            System.out.print(removedEdges.poll()+" ");
+            if(nOfEdgesRemoved % 2 !=0) System.out.println();
+        }
+
+    }
 }
 
 /*
