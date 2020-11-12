@@ -19,7 +19,7 @@ YouTube - https://www.youtube.com/channel/UCwcdyxP6uk5zso-L4lY4Y8g?view_as=subsc
 Twitter - https://twitter.com/Meina_Mk
 */
 
-public class Problem1 {
+class Problem1 {
     public static void main(String[] args) {
         Scanner inputs = new Scanner(System.in);
         int nOfInputs = inputs.nextInt();
@@ -140,9 +140,8 @@ class edgeRemoval{
 
         }
         System.out.println(nOfEdgesRemoved);
-        while(nOfEdgesRemoved-->-1){
-            System.out.print(removedEdges.poll()+" ");
-            if(nOfEdgesRemoved % 2 !=0) System.out.println();
+        while(nOfEdgesRemoved-->0){
+            System.out.println(removedEdges.poll()+" "+removedEdges.poll());
         }
 
     }
