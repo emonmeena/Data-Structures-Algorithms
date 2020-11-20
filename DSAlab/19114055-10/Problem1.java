@@ -21,78 +21,56 @@ import java.lang.*;
 import java.io.*; 
 
 class Problem1 { 
-	// No of rows and columns 
-
-	// A function to check if a given cell (row, col) can 
-	// be included in DFS 
-	boolean isSafe(int M[][], int row, int col, 
-				boolean visited[][]) 
-	{ 
-		// row number is in range, column number is in range 
-        // and value is 1 and not yet visited 
-        int n = M.length;
-		return (row >= 0) && (row < n) && (col >= 0) && (col < n) && (M[row][col] == 1 && !visited[row][col]); 
-	} 
-
-	// A utility function to do DFS for a 2D boolean matrix. 
-	// It only considers the 8 neighbors as adjacent vertices 
-	void DFS(int M[][], int row, int col, boolean visited[][]) 
-	{ 
-		// These arrays are used to get row and column numbers 
-		// of 8 neighbors of a given cell 
-		int rowNbr[] = new int[] { -1, -1, -1, 0, 0, 1, 1, 1 }; 
-		int colNbr[] = new int[] { -1, 0, 1, -1, 1, -1, 0, 1 }; 
-
-		// Mark this cell as visited 
-		visited[row][col] = true; 
-
-		// Recur for all connected neighbours 
-		for (int k = 0; k < 8; ++k) 
-			if (isSafe(M, row + rowNbr[k], col + colNbr[k], visited)) 
-				DFS(M, row + rowNbr[k], col + colNbr[k], visited); 
-	} 
-
-	// The main function that returns count of islands in a given 
-	// boolean 2D matrix 
-	int countIslands(int M[][]) 
-	{ 
-		// Make a bool array to mark visited cells. 
-        // Initially all cells are unvisited 
-        int n = M.length;
-		boolean visited[][] = new boolean[n][n]; 
-
-		// Initialize count as 0 and travese through the all cells 
-		// of given matrix 
-		int count = 0; 
-		for (int i = 0; i < n; ++i) 
-			for (int j = 0; j < n; ++j) 
-				if (M[i][j] == 1 && !visited[i][j]) // If a cell with 
-				{ // value 1 is not 
-					// visited yet, then new island found, Visit all 
-					// cells in this island and increment island count 
-					DFS(M, i, j, visited); 
-					++count; 
-				} 
-
-		return count; 
-	} 
-
-	// Driver method 
-	public static void main(String[] args) throws java.lang.Exception 
+	public static void main(String[] args)
 	{ 
 		Scanner inputs = new Scanner(System.in);
         int nOfInputs = inputs.nextInt();
 
-        // Declare a 2-D array to store the Adjacency Matrix
         int adjacencyMatrix[][] = new int[nOfInputs][nOfInputs];
 
-        // Take inputs to create the Matrix
         for (int i = 0; i < nOfInputs; i++) {
             for (int j = 0; j < nOfInputs; j++) {
                 adjacencyMatrix[i][j] = inputs.nextInt();
             }
-        }
-		Problem1 I = new Problem1(); 
-		System.out.println("Number of islands is: " + I.countIslands(adjacencyMatrix)); 
+		}
+		
+		InnerProblem1 IslandsOperation = new InnerProblem1();
+
+		IslandsOperation.countNoOfIslands(adjacencyMatrix);
+		inputs.close();
+	} 
+}
+
+class InnerProblem1{
+
+	void travelDFS(int adjacencyMatrix[][], int rowIndex, int colIndex, boolean isVisited[][]) 
+	{ 
+		int rowIndexNbr[] = new int[] { -1, -1, -1, 0, 0, 1, 1, 1 }; 
+		int colIndexNbr[] = new int[] { -1, 0, 1, -1, 1, -1, 0, 1 }; 
+
+		isVisited[rowIndex][colIndex] = true; 
+		int n = adjacencyMatrix.length;
+		for (int index = 0; index < 8; ++index) 
+			if ((rowIndex + rowIndexNbr[index] >= 0) && (rowIndex + rowIndexNbr[index] < n) && (colIndex + colIndexNbr[index] >= 0))
+				if((colIndex + colIndexNbr[index] < n) && (adjacencyMatrix[rowIndex + rowIndexNbr[index]][colIndex + colIndexNbr[index]] == 1))
+					if((!isVisited[rowIndex + rowIndexNbr[index]][colIndex + colIndexNbr[index]])) 
+						travelDFS(adjacencyMatrix, rowIndex + rowIndexNbr[index], colIndex + colIndexNbr[index], isVisited); 
+	} 
+
+	void countNoOfIslands(int adjacencyMatrix[][]) 
+	{ 
+        int n = adjacencyMatrix.length;
+		boolean isVisited[][] = new boolean[n][n]; 
+
+		int nOfIslands = 0; 
+		for (int i = 0; i < n; ++i) 
+			for (int j = 0; j < n; ++j) 
+				if (adjacencyMatrix[i][j] == 1 && !isVisited[i][j])
+				{ 
+					travelDFS(adjacencyMatrix, i, j, isVisited); 
+					++nOfIslands; 
+				} 
+
+		System.out.println("The number of islands in this given matrix is : " + nOfIslands);
 	} 
 }
